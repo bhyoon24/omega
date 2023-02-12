@@ -1,0 +1,28 @@
+{% include 'partial/base.html' %}
+{% load static %}
+{% block title %}{% endblock %}
+
+{% block content %}
+<p></p>
+<h1>OMEGA EIS Sales</h1>
+<p></p>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">고객코드</th>
+            <th scope="col">고객명</th>
+            <th scope="col">평점</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for datadisplay in select %}
+            <tr>
+                <td>{{datadisplay.CUSTOM_CODE}}</td>
+                <td>{{datadisplay.CUSTOM_NAME}}</td>
+                <td>{{datadisplay.VAT_RATE}}</td>
+            </tr>
+        {% endfor %}
+    <tbody>
+</table>
+
+{% endblock %}
